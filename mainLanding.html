@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BhaktSeva | Local Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#d85b22;
+  --primary-dark:#aa4217;
+  --cream:#fffaf4;
+  --light:#f7f3ed;
+  --dark:#211a16;
+  --text:#625b56;
+  --muted:#8a817a;
+  --border:#e8dfd7;
+  --green:#25855a;
+  --red:#b34d32;
+  --white:#fff;
+  --shadow:0 15px 45px rgba(40,25,15,.09);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"DM Sans",Arial,sans-serif;color:var(--dark);background:#fff}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+img{max-width:100%;display:block}
+.container{width:min(1180px,calc(100% - 40px));margin:auto}
+.header{height:78px;background:#fff;border-bottom:1px solid #eee7df;position:sticky;top:0;z-index:100}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:9px;font-size:24px;font-weight:700}
+.logo-text span{color:var(--primary)}
+.om{width:40px;height:40px;border-radius:11px;background:var(--primary);color:#fff;display:grid;place-items:center;font-size:21px}
+.nav-links{display:flex;align-items:center;gap:31px;font-size:14px;font-weight:600}
+.nav-links a:hover{color:var(--primary)}
+.nav-btn,.primary-btn{background:var(--primary);color:#fff;border:0;padding:12px 19px;border-radius:9px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:7px}
+.nav-btn:hover,.primary-btn:hover{background:var(--primary-dark)}
+.menu-btn{display:none;border:0;background:none;font-size:25px}
+.eyebrow{font-size:11px;letter-spacing:1.7px;font-weight:800;color:var(--primary)}
+.hero{
+  min-height:610px;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(90deg,rgba(25,14,8,.90),rgba(25,14,8,.50),rgba(25,14,8,.12)),
+    url("https://images.unsplash.com/photo-1609947017136-9daf32a5eb16?auto=format&fit=crop&w=1800&q=85") center/cover;
+}
+.hero-content{color:#fff;padding:85px 0}
+.hero .eyebrow{color:#ffd1b5}
+.hero h1,.page-hero h1,.form-head h1,.confirmation h1,.login-visual h1{
+  font-family:"Playfair Display",serif;
+}
+.hero h1{font-size:clamp(42px,5vw,68px);line-height:1.04;margin:15px 0}
+.hero h1 span{color:#ffc49d}
+.hero p{max-width:610px;color:#f1e4db;font-size:17px;line-height:1.7}
+.hero-search{
+  max-width:950px;background:#fff;color:var(--dark);border-radius:14px;padding:9px;
+  display:flex;align-items:center;margin-top:32px;box-shadow:0 18px 50px rgba(0,0,0,.2)
+}
+.search-item{flex:1;padding:10px 17px;border-right:1px solid var(--border)}
+.search-item small,.search-item strong{display:block}
+.search-item small{font-size:11px;color:var(--muted)}
+.search-item strong{font-size:13px;margin-top:4px}
+.hero-search .primary-btn{margin-left:8px;white-space:nowrap}
+.section{padding:85px 0}
+.light-section{background:var(--light)}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:32px}
+.section-head h2{font:700 38px "Playfair Display",serif;margin:7px 0}
+.text-link{color:var(--primary);font-weight:700}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.feature{background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px}
+.feature-icon{width:49px;height:49px;background:#fff0e7;color:var(--primary);border-radius:12px;display:grid;place-items:center;font-size:22px}
+.feature h3{font-size:17px;margin:18px 0 8px}
+.feature p{font-size:13px;line-height:1.65;color:var(--text)}
+.guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.guide-card{background:#fff;border:1px solid var(--border);border-radius:17px;overflow:hidden;box-shadow:0 5px 20px rgba(40,30,20,.04)}
+.guide-card>img{width:100%;height:235px;object-fit:cover}
+.guide-info{padding:19px}
+.guide-title{display:flex;justify-content:space-between;gap:12px}
+.guide-title h3{margin:0 0 7px;font-size:18px}
+.verified{font-size:11px;color:var(--green);font-weight:700}
+.rating{font-size:13px;font-weight:700;white-space:nowrap}
+.rating span{font-weight:400;color:#888}
+.meta{display:flex;flex-wrap:wrap;gap:12px;color:var(--text);font-size:12px;margin:13px 0}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span,.area-tags span{background:#f8f1eb;border-radius:20px;padding:6px 9px;font-size:11px}
+.guide-bottom{display:flex;justify-content:space-between;align-items:end;margin-top:18px}
+.price small{display:block;color:#888;font-size:10px}
+.price strong{font-size:20px}
+.outline-btn{border:1px solid var(--primary);color:var(--primary);padding:10px 14px;border-radius:8px;font-weight:700;font-size:12px;background:#fff;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.outline-btn:hover{background:#fff4ed}
+.cta{background:var(--primary);color:#fff;padding:55px 0}
+.cta-inner{display:flex;justify-content:space-between;align-items:center}
+.cta h2{font:700 38px "Playfair Display",serif;margin:7px 0}
+.white-btn{background:#fff;color:var(--primary);padding:13px 20px;border-radius:9px;font-weight:700;display:inline-flex}
+.footer{background:#211a16;color:#e9ddd5;padding-top:55px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1.3fr 1fr;gap:35px;padding-bottom:45px}
+.footer p{color:#a99c94;max-width:300px;line-height:1.6;font-size:13px}
+.footer h4{color:#fff;margin-top:0}
+.footer a,.footer span{display:block;color:#b7aaa2;font-size:13px;margin:10px 0}
+.copyright{text-align:center;border-top:1px solid #3a302b;padding:18px;color:#8e817a;font-size:12px}
+.page-hero{padding:75px 0;background:var(--cream)}
+.page-hero h1{font-size:50px;margin:8px 0}
+.page-hero p{color:var(--text)}
+.page-hero.small{padding:50px 0}
+.listing{padding:60px 0}
+.listing-layout{display:grid;grid-template-columns:280px 1fr;gap:28px}
+.filters{border:1px solid var(--border);border-radius:15px;padding:20px;height:max-content;position:sticky;top:100px}
+.filter-top{display:flex;justify-content:space-between;align-items:center}
+.filter-top h3{margin:0}
+.reset-btn{border:0;background:none;color:var(--primary);font-size:12px}
+.filters label,.field label{display:block;font-size:12px;font-weight:700;margin:18px 0 7px}
+.filters input,.filters select,.field input,.field select,.field textarea,.login-form input{
+  width:100%;border:1px solid var(--border);border-radius:8px;padding:12px;background:#fff;outline:none
+}
+.filters input:focus,.filters select:focus,.field input:focus,.field select:focus,.field textarea:focus,.login-form input:focus{border-color:var(--primary)}
+.safe-box{display:flex;gap:9px;background:#eff9f4;border-radius:10px;padding:12px;margin-top:20px;color:var(--green);font-size:12px}
+.safe-box p{margin:4px 0 0;color:#557466}
+.results-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.results-top h2{margin:0;font-size:21px}
+.results-top span{font-size:12px;color:#888}
+.results-top select{border:1px solid var(--border);padding:10px;border-radius:8px}
+.guide-list{display:grid;gap:16px}
+.horizontal{display:grid;grid-template-columns:230px 1fr}
+.horizontal>img{height:100%;min-height:255px}
+.empty{text-align:center;border:1px dashed var(--border);padding:70px;border-radius:15px;color:var(--text)}
+.profile{padding:45px 0 90px}
+.back-btn{border:0;background:none;color:var(--primary);display:flex;align-items:center;gap:7px;padding:0;margin-bottom:25px}
+.profile-top{display:grid;grid-template-columns:300px 1fr;gap:35px;align-items:center}
+.profile-top>img{width:100%;height:310px;object-fit:cover;border-radius:17px}
+.profile-top h1{font:700 45px "Playfair Display",serif;margin:12px 0}
+.verified-large{display:inline-flex;background:#eaf8f1;color:var(--green);padding:7px 10px;border-radius:20px;font-size:11px;font-weight:700}
+.profile-rating{display:flex;align-items:center;gap:7px;color:#df8c17}
+.profile-rating span{color:#777}
+.facts{display:flex;gap:18px;flex-wrap:wrap;color:var(--text);font-size:13px;margin:20px 0}
+.profile-grid{display:grid;grid-template-columns:1fr 330px;gap:25px;margin-top:45px}
+.box{background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:18px}
+.box h2{font-size:20px;margin-top:0}
+.service-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.service-grid div{padding:13px;background:#faf6f1;border-radius:9px;font-size:13px}
+.area-tags{display:flex;gap:8px;flex-wrap:wrap}
+.price-box{background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px;height:max-content;box-shadow:var(--shadow);position:sticky;top:100px}
+.price-box h3{margin-top:0}
+.price-row{display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding:15px 0}
+.price-row strong{font-size:20px}
+.availability{display:flex;gap:12px;margin:20px 0;background:#fff6ef;padding:14px;border-radius:10px;color:var(--primary)}
+.availability b,.availability span{display:block;color:var(--dark);font-size:12px;margin-bottom:3px}
+.full{width:100%}
+.secure-note{text-align:center;color:#888;font-size:11px;display:block;margin-top:12px}
+.review{display:flex;gap:12px;border-top:1px solid var(--border);padding:18px 0}
+.avatar{width:40px;height:40px;background:#ffe9dc;color:var(--primary);border-radius:50%;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+.review p{margin:7px 0 0;color:var(--text);font-size:13px}
+.booking{padding:45px 0 90px}
+.booking-layout{display:grid;grid-template-columns:1fr 360px;gap:28px}
+.form-head h1{font-size:42px;margin:8px 0}
+.form-head p{color:var(--text)}
+.selected-guide{display:flex;gap:13px;align-items:center;background:var(--light);padding:13px;border-radius:12px;margin:25px 0}
+.selected-guide img{width:58px;height:58px;border-radius:10px;object-fit:cover}
+.selected-guide b,.selected-guide span{display:block}
+.selected-guide span{font-size:12px;color:#777;margin-top:5px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field label{display:flex;align-items:center;gap:6px}
+.field textarea{height:120px;resize:vertical}
+.textarea-field{margin-top:18px}
+.payment-info{display:flex;gap:12px;background:#eff9f4;color:var(--green);padding:15px;border-radius:10px;margin-top:20px}
+.payment-info p{margin:4px 0;color:#557466;font-size:12px}
+.summary{background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px;height:max-content;box-shadow:var(--shadow);position:sticky;top:100px}
+.summary h2{margin-top:0}
+.summary-guide{display:flex;gap:12px;border-bottom:1px solid var(--border);padding-bottom:18px}
+.summary-guide img{width:55px;height:55px;border-radius:9px;object-fit:cover}
+.summary-guide b,.summary-guide span{display:block}
+.summary-guide span{font-size:12px;color:#777;margin-top:4px}
+.summary-details>div,.amounts>div{display:flex;justify-content:space-between;gap:15px;padding:10px 0;font-size:12px}
+.summary-details span,.amounts span{color:#777}
+.summary-details b{text-align:right}
+.total{border-top:1px solid var(--border);margin-top:8px;padding-top:18px!important}
+.total b{font-size:22px;color:var(--primary)}
+.cancel-note{font-size:11px;color:#888;line-height:1.5}
+.confirmation{max-width:780px;text-align:center;padding:80px 0}
+.success-icon{width:85px;height:85px;background:#e9f8f0;color:var(--green);border-radius:50%;display:grid;place-items:center;margin:0 auto 25px;font-size:40px}
+.confirmation h1{font-size:43px;margin:10px 0}
+.confirmation>p{color:var(--text)}
+.booking-id{margin:25px auto;background:var(--light);padding:15px;width:max-content;border-radius:10px}
+.booking-id span,.booking-id strong{display:block}
+.booking-id span{font-size:10px;color:#888}
+.booking-id strong{font-size:22px;letter-spacing:1px}
+.confirmation-card{text-align:left;border:1px solid var(--border);border-radius:16px;padding:22px}
+.confirmation-guide{display:flex;gap:12px;align-items:center;border-bottom:1px solid var(--border);padding-bottom:18px}
+.confirmation-guide img{width:55px;height:55px;border-radius:9px;object-fit:cover}
+.confirmation-guide b,.confirmation-guide span{display:block}
+.confirmation-guide span{font-size:11px;color:var(--green);margin-top:4px}
+.confirmation-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:22px 0}
+.info span,.info strong{display:block}
+.info span{font-size:11px;color:#888}
+.info strong{font-size:13px;margin-top:5px}
+.final-amount{border-top:1px solid var(--border);padding-top:18px;display:flex;justify-content:space-between}
+.final-amount strong{font-size:22px;color:var(--primary)}
+.actions{display:flex;justify-content:center;gap:12px;margin-top:25px}
+.tabs{display:flex;border-bottom:1px solid var(--border);gap:25px;margin-bottom:22px}
+.tabs button{border:0;background:none;padding:12px 3px;color:#888}
+.tabs .active{color:var(--primary);border-bottom:2px solid var(--primary);font-weight:700}
+.booking-card{border:1px solid var(--border);border-radius:15px;padding:20px;display:grid;grid-template-columns:1.4fr 2fr auto;gap:20px;align-items:center}
+.booking-guide{display:flex;gap:12px;align-items:center}
+.booking-guide img{width:65px;height:65px;object-fit:cover;border-radius:10px}
+.booking-guide h3{margin:5px 0}
+.booking-guide span{font-size:11px;color:#777}
+.status{display:inline-block;padding:5px 8px;border-radius:20px;font-size:10px;font-weight:700}
+.pending{background:#fff2df;color:#b46b16}
+.confirmed{background:#eaf8f1;color:var(--green)}
+.booking-info{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.login-page{min-height:calc(100vh - 78px);display:grid;grid-template-columns:1fr 1fr}
+.login-visual{background:linear-gradient(90deg,rgba(30,15,8,.78),rgba(30,15,8,.3)),url("https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=85") center/cover;color:#fff;display:flex;align-items:end;padding:70px}
+.login-visual h1{font-size:52px;max-width:500px}
+.login-visual p{max-width:450px;line-height:1.6}
+.login-form{padding:70px clamp(30px,7vw,100px);display:flex;flex-direction:column;justify-content:center}
+.login-logo{margin-bottom:45px}
+.login-form h2{font:700 38px "Playfair Display",serif;margin:10px 0}
+.login-form>p{color:var(--text);margin-top:0;margin-bottom:25px}
+.login-form label{font-size:12px;font-weight:700;margin:15px 0 7px}
+.divider{text-align:center;margin:25px 0;color:#999;font-size:11px}
+.back-home{text-align:center;color:var(--primary);font-weight:700}
+.dashboard-page{background:#f7f4ef;min-height:calc(100vh - 78px)}
+.dashboard-container{display:grid;grid-template-columns:240px 1fr;max-width:1400px;margin:auto;min-height:calc(100vh - 78px)}
+.sidebar{background:#fff;border-right:1px solid var(--border);padding:28px 18px;display:flex;flex-direction:column}
+.guide-user{margin:30px 0 15px;text-align:center}
+.guide-user img{width:65px;height:65px;border-radius:50%;object-fit:cover;margin:auto}
+.guide-user b,.guide-user span{display:block}
+.guide-user span{font-size:10px;color:var(--green);margin-top:5px}
+.sidebar nav{margin-top:20px}
+.sidebar nav a,.logout{display:flex;gap:10px;align-items:center;padding:12px;border-radius:8px;font-size:13px;color:#6f665f;margin-bottom:4px}
+.sidebar nav a.active,.sidebar nav a:hover{background:#fff0e7;color:var(--primary);font-weight:700}
+.logout{margin-top:auto;color:#b14b2e}
+.dashboard-main{padding:38px}
+.dashboard-header{display:flex;justify-content:space-between;align-items:center}
+.dashboard-header h1{margin:6px 0;font:700 30px "Playfair Display",serif}
+.dashboard-header p{margin:0;color:#777;font-size:13px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin:25px 0}
+.stat{background:#fff;border:1px solid var(--border);border-radius:13px;padding:18px;display:flex;gap:13px;align-items:center}
+.stat-icon{width:42px;height:42px;background:#fff0e7;color:var(--primary);border-radius:10px;display:grid;place-items:center}
+.stat span,.stat strong{display:block}
+.stat span{font-size:11px;color:#888}
+.stat strong{font-size:21px;margin-top:4px}
+.dashboard-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.box-head{display:flex;justify-content:space-between;align-items:center}
+.box-head h2{font-size:18px;margin:0}
+.box-head p{margin:5px 0 0}
+.count{background:#fff0e7;color:var(--primary);padding:6px 10px;border-radius:20px;font-size:12px}
+.request{display:flex;gap:10px;align-items:center;border-top:1px solid var(--border);padding:17px 0}
+.request-avatar{width:38px;height:38px;border-radius:50%;background:#fff0e7;color:var(--primary);display:grid;place-items:center;font-weight:700}
+.request-info{flex:1}
+.request-info b,.request-info span,.request-info small{display:block}
+.request-info span,.request-info small{font-size:11px;color:#777;margin-top:3px}
+.request-actions{display:flex;gap:5px}
+.accept,.reject{border:0;padding:8px 10px;border-radius:7px;font-size:11px;font-weight:700}
+.accept{background:#e9f8f0;color:var(--green)}
+.reject{background:#fff0ed;color:var(--red)}
+.small-btn{border:1px solid var(--border);background:#fff;padding:7px 10px;border-radius:7px;font-size:11px}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:20px}
+.day{background:#f5f2ed;border-radius:7px;text-align:center;padding:8px 2px}
+.day span,.day small{display:block}
+.day span{font-weight:700}
+.day small{font-size:8px;color:#777}
+.day.active{background:#e9f8f0;color:var(--green)}
+.time-available{display:flex;align-items:center;gap:8px;background:#fff6ef;color:var(--primary);padding:12px;border-radius:8px;margin-top:15px;font-size:12px}
+.table{margin-top:20px;overflow:auto}
+.table-head,.table-row{min-width:650px;display:grid;grid-template-columns:1.3fr 1fr 1.5fr 1fr 1fr;gap:12px;align-items:center;padding:13px 0;border-top:1px solid var(--border);font-size:12px}
+.table-head{color:#888;font-size:10px}
+.commission-note{display:flex;gap:12px;background:#eff9f4;color:var(--green);padding:17px;border-radius:10px;margin-top:18px}
+.commission-note p{margin:4px 0 0;color:#557466;font-size:12px}
+#toast{position:fixed;right:20px;bottom:20px;background:#211a16;color:#fff;padding:13px 18px;border-radius:9px;display:none;z-index:1000;font-size:13px}
+
+@media(max-width:900px){
+  .nav-links{display:none}
+  .nav-links.open{display:flex;position:absolute;left:20px;right:20px;top:70px;background:#fff;padding:20px;box-shadow:var(--shadow);flex-direction:column;gap:18px}
+  .nav-btn{display:none}.menu-btn{display:block}
+  .feature-grid,.guide-grid{grid-template-columns:1fr 1fr}
+  .hero-search{flex-wrap:wrap}.search-item{min-width:45%}
+  .hero-search .primary-btn{width:100%;margin:8px 0 0}
+  .listing-layout,.booking-layout,.profile-grid{grid-template-columns:1fr}
+  .filters,.price-box,.summary{position:static}
+  .booking-card{grid-template-columns:1fr}
+  .booking-info{grid-template-columns:repeat(3,1fr)}
+  .profile-top{grid-template-columns:220px 1fr}
+  .login-page{grid-template-columns:1fr}
+  .login-visual{min-height:420px}
+  .dashboard-container{grid-template-columns:1fr}
+  .sidebar{display:none}
+  .stats{grid-template-columns:1fr 1fr}
+  .dashboard-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .container{width:calc(100% - 28px)}
+  .hero{min-height:650px}.hero h1{font-size:44px}
+  .hero-search{display:block}.search-item{border-right:0;border-bottom:1px solid var(--border)}
+  .feature-grid,.guide-grid,.form-grid,.confirmation-grid{grid-template-columns:1fr}
+  .section-head,.cta-inner{display:block}
+  .section-head .text-link{display:inline-block;margin-top:15px}
+  .horizontal{display:block}.horizontal>img{height:220px}
+  .profile-top{grid-template-columns:1fr}.profile-top h1{font-size:38px}
+  .booking-info{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .login-visual{padding:40px 25px}.login-visual h1{font-size:40px}
+  .dashboard-main{padding:22px 14px}
+  .dashboard-header{display:block}.dashboard-header .primary-btn{margin-top:18px;width:100%}
+  .actions{flex-direction:column}.actions>*{width:100%}
+}
+
+/* ===== CUSTOMER ACCOUNT / LOGIN ===== */
+.customer-auth{min-height:calc(100vh - 78px);display:grid;grid-template-columns:1fr 1fr}
+.customer-auth-visual{background:linear-gradient(90deg,rgba(30,15,8,.82),rgba(30,15,8,.25)),url("https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=85") center/cover;color:#fff;display:flex;align-items:end;padding:70px}
+.customer-auth-visual h1{font:700 52px "Playfair Display",serif;max-width:520px;line-height:1.05}
+.customer-auth-visual p{max-width:470px;line-height:1.6;color:#f2e5dc}
+.customer-auth-box{padding:65px clamp(28px,7vw,100px);display:flex;flex-direction:column;justify-content:center}
+.auth-switch{display:flex;gap:5px;background:#f7f3ed;padding:5px;border-radius:9px;margin:20px 0 24px}
+.auth-switch button{flex:1;border:0;background:transparent;padding:10px;border-radius:7px;color:#777}
+.auth-switch button.active{background:#fff;color:var(--primary);font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.customer-auth-box h2{font:700 38px "Playfair Display",serif;margin:8px 0}
+.customer-auth-box>p{color:var(--text);font-size:13px}
+.customer-auth-box label{display:block;font-size:11px;font-weight:700;margin:14px 0 7px}
+.customer-auth-box input{width:100%;border:1px solid var(--border);border-radius:8px;padding:12px;background:#fff;outline:none}
+.customer-auth-box input:focus{border-color:var(--primary)}
+.account-page{background:#f7f4ef;min-height:calc(100vh - 78px);padding:48px 0 80px}
+.account-layout{display:grid;grid-template-columns:235px 1fr;gap:22px;align-items:start}
+.account-sidebar{background:#fff;border:1px solid var(--border);border-radius:15px;padding:18px;position:sticky;top:100px}
+.account-avatar{width:68px;height:68px;border-radius:50%;background:#fff0e7;color:var(--primary);display:grid;place-items:center;font-size:24px;font-weight:700;margin:0 auto 10px}
+.account-sidebar-name{text-align:center;font-weight:700}
+.account-sidebar-email{text-align:center;color:#888;font-size:10px;margin-top:4px;word-break:break-word}
+.account-nav{margin-top:22px}
+.account-nav a{display:flex;gap:9px;padding:11px;border-radius:8px;color:#6f665f;font-size:12px;margin-bottom:4px}
+.account-nav a.active,.account-nav a:hover{background:#fff0e7;color:var(--primary);font-weight:700}
+.account-logout{color:var(--red)!important;margin-top:10px}
+.account-main{min-width:0}
+.account-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.account-head h1{font:700 34px "Playfair Display",serif;margin:6px 0}
+.account-head p{margin:0;color:#777;font-size:12px}
+.account-card{background:#fff;border:1px solid var(--border);border-radius:15px;padding:22px;margin-bottom:18px}
+.account-card h2{font-size:18px;margin:0 0 18px}
+.account-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.account-field label{display:block;font-size:11px;font-weight:700;margin-bottom:7px}
+.account-field input{width:100%;border:1px solid var(--border);padding:11px;border-radius:8px;outline:none}
+.account-field input:focus{border-color:var(--primary)}
+.account-actions{margin-top:18px;display:flex;gap:8px}
+.account-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.account-stat{background:#faf6f1;border-radius:10px;padding:15px}
+.account-stat span{display:block;font-size:10px;color:#888}
+.account-stat strong{display:block;font-size:20px;margin-top:5px}
+.account-booking{background:#fff;border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:13px}
+.account-booking-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.account-booking-guide{display:flex;gap:11px;align-items:center}
+.account-booking-guide img{width:55px;height:55px;border-radius:9px;object-fit:cover}
+.account-booking-guide b,.account-booking-guide span{display:block}
+.account-booking-guide span{font-size:10px;color:#777;margin-top:3px}
+.account-status{display:inline-block;padding:5px 9px;border-radius:20px;font-size:9px;font-weight:700}
+.account-status.pending{background:#fff2df;color:#b46b16}
+.account-status.confirmed{background:#eaf8f1;color:var(--green)}
+.account-status.completed{background:#e9f0ff;color:#3d64a8}
+.account-status.cancelled{background:#fff0ed;color:var(--red)}
+.account-booking-info{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;border-top:1px solid var(--border);margin-top:15px;padding-top:15px}
+.account-booking-info span,.account-booking-info strong{display:block}
+.account-booking-info span{font-size:9px;color:#888}
+.account-booking-info strong{font-size:11px;margin-top:4px}
+.account-booking-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:15px}
+.account-tabs{display:flex;gap:20px;border-bottom:1px solid var(--border);margin-bottom:18px}
+.account-tabs button{border:0;background:none;padding:11px 2px;color:#888;font-size:12px}
+.account-tabs button.active{color:var(--primary);font-weight:700;border-bottom:2px solid var(--primary)}
+.account-empty{text-align:center;background:#fff;border:1px dashed var(--border);padding:55px;border-radius:14px}
+.booking-detail-modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;padding:18px;z-index:1001}
+.booking-detail-modal.open{display:flex}
+.booking-detail-box{background:#fff;width:min(650px,100%);max-height:90vh;overflow:auto;border-radius:16px;padding:24px;position:relative}
+.booking-detail-close{position:absolute;right:14px;top:13px;border:0;background:#f5f1ec;width:32px;height:32px;border-radius:50%;font-size:18px}
+@media(max-width:900px){
+  .customer-auth{grid-template-columns:1fr}
+  .customer-auth-visual{min-height:390px}
+  .account-layout{grid-template-columns:1fr}
+  .account-sidebar{position:static}
+  .account-booking-info{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:600px){
+  .customer-auth-visual{padding:40px 25px}
+  .customer-auth-visual h1{font-size:40px}
+  .account-form-grid{grid-template-columns:1fr}
+  .account-stats{grid-template-columns:1fr 1fr}
+  .account-booking-top{align-items:flex-start;flex-direction:column}
+  .account-booking-info{grid-template-columns:1fr 1fr}
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="#home">
+      <span class="om">ॐ</span>
+      <span class="logo-text">Bhakt<span>Seva</span></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#guides">Local Guides</a>
+      <a href="#bookings">My Bookings</a>
+      <a href="#profile">My Profile</a>
+      <a href="#guide-login">Become a Guide</a>
+    </nav>
+
+    <a class="nav-btn" href="#guides">Find a Guide</a>
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="logo" href="#home">
+        <span class="om">ॐ</span>
+        <span class="logo-text">Bhakt<span>Seva</span></span>
+      </a>
+      <p>Verified local guides for devotees visiting Pandharpur.</p>
+    </div>
+    <div>
+      <h4>Local Guide</h4>
+      <a href="#guides">Find Guides</a>
+      <a href="#bookings">My Bookings</a>
+      <a href="#guide-login">Guide Login</a>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <span>Temple Guidance</span>
+      <span>Local Sightseeing</span>
+      <span>Shopping Assistance</span>
+      <span>Transport Assistance</span>
+    </div>
+    <div>
+      <h4>Support</h4>
+      <span>Help Center</span>
+      <span>Cancellation Policy</span>
+      <span>Terms & Conditions</span>
+      <span>Privacy Policy</span>
+    </div>
+  </div>
+  <div class="copyright">© 2026 BhaktSeva. All rights reserved.</div>
+</footer>
+
+<div id="toast"></div>
+
+<script>
+/* ============================================================
+   BHAKTSEVA LOCAL GUIDE
+   Pure HTML + CSS + JavaScript
+   Single-file frontend
+   ============================================================ */
+
+const guides = [
+  {
+    id:1,
+    name:"Rahul Patil",
+    image:"https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&q=80",
+    languages:["Marathi","Hindi","English"],
+    experience:"8 Years",
+    areas:["Pandharpur Temple","Chandrabhaga","Local Market"],
+    rating:4.9,
+    reviews:124,
+    hourly:500,
+    halfDay:1200,
+    fullDay:2000,
+    services:[
+      "Temple Area Guidance",
+      "Local Sightseeing",
+      "Food / Prasad Guidance",
+      "Shopping Assistance"
+    ]
+  },
+  {
+    id:2,
+    name:"Sneha Jadhav",
+    image:"https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=700&q=80",
+    languages:["Marathi","Hindi"],
+    experience:"6 Years",
+    areas:["Pandharpur","Temple Area","Local Market"],
+    rating:4.8,
+    reviews:96,
+    hourly:450,
+    halfDay:1100,
+    fullDay:1800,
+    services:[
+      "Temple Area Guidance",
+      "Food / Prasad Guidance",
+      "Shopping Assistance"
+    ]
+  },
+  {
+    id:3,
+    name:"Amit Shinde",
+    image:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80",
+    languages:["Hindi","English","Marathi"],
+    experience:"10 Years",
+    areas:["Pandharpur","Nearby Sightseeing"],
+    rating:4.7,
+    reviews:81,
+    hourly:600,
+    halfDay:1400,
+    fullDay:2300,
+    services:[
+      "Local Sightseeing",
+      "Local Transport Assistance",
+      "General Local Assistance"
+    ]
+  },
+  {
+    id:4,
+    name:"Priya More",
+    image:"https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=80",
+    languages:["Marathi","English"],
+    experience:"5 Years",
+    areas:["Temple Area","Pandharpur Market"],
+    rating:4.9,
+    reviews:72,
+    hourly:400,
+    halfDay:1000,
+    fullDay:1700,
+    services:[
+      "Temple Area Guidance",
+      "Shopping Assistance",
+      "General Local Assistance"
+    ]
+  }
+];
+
+const app = document.getElementById("app");
+
+function showToast(message){
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.style.display = "block";
+  setTimeout(() => toast.style.display = "none", 2500);
+}
+
+function guideCard(g, horizontal=false){
+  return `
+    <article class="guide-card ${horizontal ? "horizontal" : ""}">
+      <img src="${g.image}" alt="${g.name}">
+      <div class="guide-info">
+        <div class="guide-title">
+          <div>
+            <h3>${g.name}</h3>
+            <div class="verified">✓ Verified Guide</div>
+          </div>
+          <div class="rating">★ ${g.rating} <span>(${g.reviews})</span></div>
+        </div>
+
+        <div class="meta">
+          <span>🌐 ${g.languages.join(", ")}</span>
+          <span>💼 ${g.experience}</span>
+        </div>
+
+        <div class="meta">📍 ${g.areas.join(" • ")}</div>
+
+        <div class="tags">
+          ${g.services.slice(0,3).map(s => `<span>${s}</span>`).join("")}
+        </div>
+
+        <div class="guide-bottom">
+          <div class="price">
+            <small>Starting from</small>
+            <strong>₹${g.hourly}<small>/hour</small></strong>
+          </div>
+          <a class="outline-btn" href="#guide/${g.id}">View Profile →</a>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function homePage(){
+  return `
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="eyebrow">✓ VERIFIED LOCAL GUIDES</div>
+        <h1>Explore Pandharpur<br><span>With a Local Guide</span></h1>
+        <p>Discover temples, local places, food, shopping and culture with trusted local guides.</p>
+
+        <div class="hero-search">
+          <div class="search-item">
+            <small>Location</small>
+            <strong>📍 Pandharpur</strong>
+          </div>
+          <div class="search-item">
+            <small>Date</small>
+            <strong>📅 Select Date</strong>
+          </div>
+          <div class="search-item">
+            <small>Language</small>
+            <strong>🌐 Any Language</strong>
+          </div>
+          <a class="primary-btn" href="#guides">⌕ Search Guides</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">DISCOVER</div>
+            <h2>Why Book a Local Guide?</h2>
+          </div>
+          <a class="text-link" href="#guides">View All Guides →</a>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="feature-icon">✓</div>
+            <h3>Verified Guides</h3>
+            <p>Book only Admin-approved and verified local guides.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">文</div>
+            <h3>Your Language</h3>
+            <p>Choose a guide who speaks your preferred language.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">◷</div>
+            <h3>Flexible Booking</h3>
+            <p>Select your date, time, duration and service.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">★</div>
+            <h3>Rated & Reviewed</h3>
+            <p>See ratings and reviews before booking.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">TOP GUIDES</div>
+            <h2>Meet Our Local Guides</h2>
+          </div>
+        </div>
+        <div class="guide-grid">
+          ${guides.slice(0,3).map(g => guideCard(g)).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-inner">
+        <div>
+          <div class="eyebrow" style="color:#ffd7bf">JOIN BHAKTSEVA</div>
+          <h2>Are you a local guide?</h2>
+          <p>Share your local knowledge and grow your guide business.</p>
+        </div>
+        <a class="white-btn" href="#guide-login">Become a Guide →</a>
+      </div>
+    </section>
+  `;
+}
+
+function guidesPage(){
+  return `
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">LOCAL GUIDE</div>
+        <h1>Find Your Perfect Guide</h1>
+        <p>Choose from verified local guides for your Pandharpur journey.</p>
+      </div>
+    </section>
+
+    <section class="listing">
+      <div class="container listing-layout">
+
+        <aside class="filters">
+          <div class="filter-top">
+            <h3>Filters</h3>
+            <button class="reset-btn" id="resetFilters">Reset</button>
+          </div>
+
+          <label>Search</label>
+          <input id="searchGuide" placeholder="Guide or area...">
+
+          <label>Language</label>
+          <select id="filterLanguage">
+            <option>All</option>
+            <option>Marathi</option>
+            <option>Hindi</option>
+            <option>English</option>
+          </select>
+
+          <label>Service Type</label>
+          <select id="filterService">
+            <option>All</option>
+            <option>Temple Area Guidance</option>
+            <option>Local Sightseeing</option>
+            <option>Food / Prasad Guidance</option>
+            <option>Shopping Assistance</option>
+            <option>Local Transport Assistance</option>
+            <option>General Local Assistance</option>
+          </select>
+
+          <label>Maximum Full-Day Price</label>
+          <input id="filterPrice" type="range" min="500" max="2500" step="100" value="2500">
+          <div style="display:flex;justify-content:space-between;font-size:12px">
+            <span>₹500</span><strong id="priceValue">₹2500</strong>
+          </div>
+
+          <div class="safe-box">
+            ✓
+            <div>
+              <strong>Verified Guides Only</strong>
+              <p>Every guide is reviewed by BhaktSeva Admin.</p>
+            </div>
+          </div>
+        </aside>
+
+        <div class="results">
+          <div class="results-top">
+            <div>
+              <h2 id="resultCount">4 Guides Available</h2>
+              <span>Pandharpur</span>
+            </div>
+            <select id="sortGuides">
+              <option value="recommended">Recommended</option>
+              <option value="rating">Highest Rated</option>
+              <option value="price">Price: Low to High</option>
+            </select>
+          </div>
+          <div class="guide-list" id="guideList"></div>
+        </div>
+
+      </div>
+    </section>
+  `;
+}
+
+function initGuides(){
+  const search = document.getElementById("searchGuide");
+  const language = document.getElementById("filterLanguage");
+  const service = document.getElementById("filterService");
+  const price = document.getElementById("filterPrice");
+  const priceValue = document.getElementById("priceValue");
+  const sort = document.getElementById("sortGuides");
+  const list = document.getElementById("guideList");
+
+  function render(){
+    const q = search.value.trim().toLowerCase();
+
+    let filtered = guides.filter(g => {
+      const text = (g.name + " " + g.areas.join(" ")).toLowerCase();
+      return (
+        text.includes(q) &&
+        (language.value === "All" || g.languages.includes(language.value)) &&
+        (service.value === "All" || g.services.includes(service.value)) &&
+        g.fullDay <= Number(price.value)
+      );
+    });
+
+    if(sort.value === "rating"){
+      filtered.sort((a,b) => b.rating - a.rating);
+    }
+    if(sort.value === "price"){
+      filtered.sort((a,b) => a.hourly - b.hourly);
+    }
+
+    priceValue.textContent = "₹" + price.value;
+    document.getElementById("resultCount").textContent = filtered.length + " Guides Available";
+
+    list.innerHTML = filtered.length
+      ? filtered.map(g => guideCard(g,true)).join("")
+      : `<div class="empty"><h3>No guides found</h3><p>Try changing your filters.</p></div>`;
+  }
+
+  [search,language,service,price,sort].forEach(el => el.addEventListener("input",render));
+
+  document.getElementById("resetFilters").onclick = () => {
+    search.value = "";
+    language.value = "All";
+    service.value = "All";
+    price.value = "2500";
+    sort.value = "recommended";
+    render();
+  };
+
+  render();
+}
+
+function guideProfile(id){
+  const g = guides.find(x => x.id === Number(id));
+
+  if(!g){
+    return `<section class="section"><div class="container"><h2>Guide not found</h2><a class="text-link" href="#guides">Back to Guides</a></div></section>`;
+  }
+
+  return `
+    <section class="profile">
+      <div class="container">
+
+        <button class="back-btn" onclick="history.back()">← Back to Guides</button>
+
+        <div class="profile-top">
+          <img src="${g.image}" alt="${g.name}">
+
+          <div>
+            <div class="verified-large">✓ Verified Guide</div>
+            <h1>${g.name}</h1>
+
+            <div class="profile-rating">
+              ★ <b>${g.rating}</b>
+              <span>${g.reviews} reviews</span>
+            </div>
+
+            <div class="facts">
+              <span>🌐 ${g.languages.join(", ")}</span>
+              <span>💼 ${g.experience}</span>
+              <span>📍 ${g.areas.join(", ")}</span>
+            </div>
+
+            <a class="primary-btn" href="#book/${g.id}">Book This Guide →</a>
+          </div>
+        </div>
+
+        <div class="profile-grid">
+          <div>
+
+            <div class="box">
+              <h2>About the Guide</h2>
+              <p>
+                I am a local guide based in Pandharpur with extensive experience
+                helping devotees explore temples, local places, food and shopping
+                areas comfortably.
+              </p>
+            </div>
+
+            <div class="box">
+              <h2>Services Offered</h2>
+              <div class="service-grid">
+                ${g.services.map(s => `<div>✓ ${s}</div>`).join("")}
+              </div>
+            </div>
+
+            <div class="box">
+              <h2>Areas Covered</h2>
+              <div class="area-tags">
+                ${g.areas.map(a => `<span>📍 ${a}</span>`).join("")}
+              </div>
+            </div>
+
+            <div class="box">
+              <h2>Reviews</h2>
+
+              <div class="review">
+                <div class="avatar">M</div>
+                <div>
+                  <b>Mahesh Kulkarni</b>
+                  <div style="color:#df8c17">★★★★★ 5.0</div>
+                  <p>Very helpful guide. The temple visit was well organised.</p>
+                </div>
+              </div>
+
+              <div class="review">
+                <div class="avatar">N</div>
+                <div>
+                  <b>Neha Joshi</b>
+                  <div style="color:#df8c17">★★★★★ 4.8</div>
+                  <p>Good local knowledge and very polite.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <aside class="price-box">
+            <h3>Guide Charges</h3>
+
+            <div class="price-row">
+              <span>Hourly</span>
+              <strong>₹${g.hourly}</strong>
+            </div>
+            <div class="price-row">
+              <span>Half Day</span>
+              <strong>₹${g.halfDay}</strong>
+            </div>
+            <div class="price-row">
+              <span>Full Day</span>
+              <strong>₹${g.fullDay}</strong>
+            </div>
+
+            <div class="availability">
+              📅
+              <div>
+                <b>Availability</b>
+                <span>Mon - Sun</span>
+                <span>07:00 AM - 09:00 PM</span>
+              </div>
+            </div>
+
+            <a class="primary-btn full" href="#book/${g.id}">Book Now</a>
+            <small class="secure-note">Secure booking through BhaktSeva</small>
+          </aside>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function bookingPage(id){
+  const g = guides.find(x => x.id === Number(id));
+  if(!g) return `<section class="section"><div class="container"><h2>Guide not found</h2></div></section>`;
+
+  return `
+    <section class="booking">
+      <div class="container">
+
+        <button class="back-btn" onclick="history.back()">← Back</button>
+
+        <div class="booking-layout">
+          <div>
+
+            <div class="form-head">
+              <div class="eyebrow">BOOK YOUR GUIDE</div>
+              <h1>Complete Your Booking</h1>
+              <p>Select your date, time and service requirements.</p>
+            </div>
+
+            <div class="selected-guide">
+              <img src="${g.image}" alt="${g.name}">
+              <div>
+                <b>${g.name}</b>
+                <span>★ ${g.rating} • Verified Guide</span>
+              </div>
+            </div>
+
+            <div class="form-grid">
+
+              <div class="field">
+                <label>Date</label>
+                <input id="bookingDate" type="date">
+              </div>
+
+              <div class="field">
+                <label>Start Time</label>
+                <input id="bookingTime" type="time" value="09:00">
+              </div>
+
+              <div class="field">
+                <label>Duration</label>
+                <select id="bookingDuration">
+                  <option value="1">1 Hour</option>
+                  <option value="2">2 Hours</option>
+                  <option value="3">3 Hours</option>
+                  <option value="4">4 Hours</option>
+                  <option value="6">Half Day</option>
+                  <option value="8">Full Day</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label>Number of People</label>
+                <input id="bookingPersons" type="number" min="1" value="2">
+              </div>
+
+              <div class="field">
+                <label>Preferred Language</label>
+                <select id="bookingLanguage">
+                  ${g.languages.map(x => `<option>${x}</option>`).join("")}
+                </select>
+              </div>
+
+              <div class="field">
+                <label>Service Type</label>
+                <select id="bookingService">
+                  ${g.services.map(x => `<option>${x}</option>`).join("")}
+                </select>
+              </div>
+
+            </div>
+
+            <div class="field textarea-field">
+              <label>Special Requirements</label>
+              <textarea id="bookingRequirements" placeholder="Tell your guide about any special requirements..."></textarea>
+            </div>
+
+            <div class="payment-info">
+              ✓
+              <div>
+                <b>Safe & Secure Booking</b>
+                <p>Your booking request will be sent to the selected guide after payment.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <aside class="summary">
+            <h2>Booking Summary</h2>
+
+            <div class="summary-guide">
+              <img src="${g.image}" alt="${g.name}">
+              <div>
+                <b>${g.name}</b>
+                <span>Pandharpur</span>
+              </div>
+            </div>
+
+            <div class="summary-details">
+              <div><span>Date</span><b id="sumDate">Not selected</b></div>
+              <div><span>Time</span><b id="sumTime">09:00</b></div>
+              <div><span>Duration</span><b id="sumDuration">1 Hour</b></div>
+              <div><span>People</span><b id="sumPeople">2</b></div>
+              <div><span>Service</span><b id="sumService">${g.services[0]}</b></div>
+            </div>
+
+            <div class="amounts">
+              <div><span>Guide Charge</span><b id="guideAmount">₹${g.hourly}</b></div>
+              <div><span>BhaktSeva Service Charge</span><b id="serviceAmount">₹${Math.round(g.hourly * .05)}</b></div>
+              <div class="total"><span>Total Amount</span><b id="totalAmount">₹${Math.round(g.hourly * 1.05)}</b></div>
+            </div>
+
+            <button class="primary-btn full" id="paymentBtn">Proceed to Payment →</button>
+            <p class="cancel-note">Cancellation and refund rules apply as per BhaktSeva policy.</p>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function initBooking(id){
+  const g = guides.find(x => x.id === Number(id));
+
+  const date = document.getElementById("bookingDate");
+  const time = document.getElementById("bookingTime");
+  const duration = document.getElementById("bookingDuration");
+  const persons = document.getElementById("bookingPersons");
+  const language = document.getElementById("bookingLanguage");
+  const service = document.getElementById("bookingService");
+
+  function calculate(){
+    const hours = Number(duration.value);
+    const guideAmount = g.hourly * hours;
+    const serviceCharge = Math.round(guideAmount * .05);
+    const total = guideAmount + serviceCharge;
+
+    document.getElementById("sumDate").textContent = date.value || "Not selected";
+    document.getElementById("sumTime").textContent = time.value;
+    document.getElementById("sumDuration").textContent = hours + " Hours";
+    document.getElementById("sumPeople").textContent = persons.value;
+    document.getElementById("sumService").textContent = service.value;
+    document.getElementById("guideAmount").textContent = "₹" + guideAmount;
+    document.getElementById("serviceAmount").textContent = "₹" + serviceCharge;
+    document.getElementById("totalAmount").textContent = "₹" + total;
+  }
+
+  [date,time,duration,persons,language,service].forEach(el => {
+    el.addEventListener("input",calculate);
+  });
+
+  document.getElementById("paymentBtn").onclick = () => {
+    if(!date.value){
+      showToast("Please select booking date");
+      return;
+    }
+
+    const hours = Number(duration.value);
+    const guideAmount = g.hourly * hours;
+    const serviceCharge = Math.round(guideAmount * .05);
+
+    const booking = {
+      id:"BSLG" + Math.floor(100000 + Math.random()*900000),
+      guideId:g.id,
+      guideName:g.name,
+      date:date.value,
+      time:time.value,
+      duration:duration.value,
+      persons:persons.value,
+      language:language.value,
+      service:service.value,
+      requirements:document.getElementById("bookingRequirements").value,
+      guideAmount,
+      serviceCharge,
+      total:guideAmount + serviceCharge,
+      status:"Guide Pending"
+    };
+
+    const customer = currentCustomer();
+
+    if(!customer){
+      localStorage.setItem("bhaktsevaPendingBooking",JSON.stringify(booking));
+      showToast("Please login or register before booking");
+      setTimeout(() => location.hash = "#customer-login", 500);
+      return;
+    }
+
+    booking.customerId = customer.id;
+
+    const customerBookingList = allCustomerBookings();
+    customerBookingList.push(booking);
+    localStorage.setItem("bhaktsevaCustomerBookings",JSON.stringify(customerBookingList));
+    localStorage.setItem("bhaktsevaBooking",JSON.stringify(booking));
+
+    location.hash = "#confirmation";
+  };
+
+  calculate();
+}
+
+function confirmationPage(){
+  const b = JSON.parse(localStorage.getItem("bhaktsevaBooking") || "{}");
+  const g = guides.find(x => x.id === Number(b.guideId)) || guides[0];
+
+  return `
+    <section>
+      <div class="container confirmation">
+
+        <div class="success-icon">✓</div>
+
+        <div class="eyebrow">BOOKING REQUEST CREATED</div>
+        <h1>Booking Submitted Successfully!</h1>
+
+        <p>
+          Your booking request has been submitted.
+          The guide will accept or reject your request.
+        </p>
+
+        <div class="booking-id">
+          <span>Booking ID</span>
+          <strong>${b.id || "BSLG482951"}</strong>
+        </div>
+
+        <div class="confirmation-card">
+
+          <div class="confirmation-guide">
+            <img src="${g.image}" alt="${g.name}">
+            <div>
+              <b>${g.name}</b>
+              <span>✓ Verified Guide</span>
+            </div>
+          </div>
+
+          <div class="confirmation-grid">
+            ${infoBlock("Date",b.date || "25 Aug 2026")}
+            ${infoBlock("Start Time",b.time || "09:00")}
+            ${infoBlock("Duration",(b.duration || "2") + " Hours")}
+            ${infoBlock("People",b.persons || "2")}
+            ${infoBlock("Language",b.language || "Marathi")}
+            ${infoBlock("Service",b.service || "Temple Area Guidance")}
+          </div>
+
+          <div class="final-amount">
+            <span>Total Paid</span>
+            <strong>₹${b.total || 1050}</strong>
+          </div>
+
+        </div>
+
+        <div class="actions">
+          <a class="primary-btn" href="#bookings">View My Bookings</a>
+          <a class="outline-btn" href="#guides">Find Another Guide</a>
+        </div>
+
+      </div>
+    </section>
+  `;
+}
+
+function infoBlock(label,value){
+  return `<div class="info"><span>${label}</span><strong>${value}</strong></div>`;
+}
+
+function myBookingsPage(){
+  return customerBookingsPageFallback();
+}
+
+function customerBookingsPageFallback(){
+  const c=currentCustomer();
+
+  if(!c){
+    location.hash="#customer-login";
+    return "";
+  }
+
+  return myBookingsPageContentForCustomer(c);
+}
+
+function myBookingsPageContentForCustomer(c){
+  const bookings=customerBookingsFor(c.id);
+
+  return `
+    <section class="page-hero small">
+      <div class="container">
+        <div class="eyebrow">MY ACCOUNT</div>
+        <h1>My Bookings</h1>
+        <p>Check your Local Guide booking status and details.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="account-tabs">
+          <button class="active">All</button>
+          <a class="outline-btn" href="#profile">My Profile</a>
+        </div>
+        <div>
+          ${bookings.length ? bookings.slice().reverse().map(customerBookingCard).join("") :
+          `<div class="account-empty"><h3>No bookings yet</h3><p>Book a verified Local Guide.</p><a class="primary-btn" href="#guides">Find a Guide</a></div>`}
+        </div>
+      </div>
+    </section>
+    <div class="booking-detail-modal" id="customerBookingModal">
+      <div class="booking-detail-box" id="customerBookingModalContent"></div>
+    </div>
+  `;
+}
+function guideLoginPage(){
+  return `
+    <section class="login-page">
+
+      <div class="login-visual">
+        <div>
+          <div class="eyebrow" style="color:#ffd0b1">JOIN BHAKTSEVA</div>
+          <h1>Share Your Local Knowledge</h1>
+          <p>Become a verified local guide and help devotees discover Pandharpur.</p>
+        </div>
+      </div>
+
+      <div class="login-form">
+
+        <div class="logo login-logo">
+          <span class="om">ॐ</span>
+          <span class="logo-text">Bhakt<span>Seva</span></span>
+        </div>
+
+        <div class="eyebrow">GUIDE PORTAL</div>
+        <h2>Guide Login</h2>
+        <p>Login to manage your profile, availability and bookings.</p>
+
+        <label>Mobile Number</label>
+        <input id="guideMobile" placeholder="+91 98765 43210">
+
+        <button class="primary-btn full" id="guideLoginBtn">Continue with OTP</button>
+
+        <div class="divider">OR</div>
+
+        <a class="back-home" href="#guides">Continue as User</a>
+
+      </div>
+
+    </section>
+  `;
+}
+
+function dashboardPage(earnings=false){
+  return `
+    <section class="dashboard-page">
+      <div class="dashboard-container">
+
+        <aside class="sidebar">
+
+          <div class="logo">
+            <span class="om">ॐ</span>
+            <span class="logo-text">Bhakt<span>Seva</span></span>
+          </div>
+
+          <div class="guide-user">
+            <img src="${guides[0].image}" alt="${guides[0].name}">
+            <b>${guides[0].name}</b>
+            <span>✓ Verified Guide</span>
+          </div>
+
+          <nav>
+            <a class="${!earnings ? "active" : ""}" href="#dashboard">▣ Dashboard</a>
+            <a href="#">◷ Availability</a>
+            <a href="#">▤ Bookings</a>
+            <a class="${earnings ? "active" : ""}" href="#earnings">₹ Earnings</a>
+            <a href="#">★ Reviews</a>
+          </nav>
+
+          <a class="logout" href="#guide-login">↪ Logout</a>
+
+        </aside>
+
+        <section class="dashboard-main">
+
+          <div class="dashboard-header">
+            <div>
+              <div class="eyebrow">${earnings ? "FINANCIAL OVERVIEW" : "GUIDE DASHBOARD"}</div>
+              <h1>${earnings ? "Earnings" : "Good Morning, Rahul 👋"}</h1>
+              <p>${earnings ? "Track your earnings and BhaktSeva commission." : "Manage your local guide activities."}</p>
+            </div>
+            <button class="primary-btn">Edit Profile</button>
+          </div>
+
+          <div class="stats">
+            ${statBlock("₹","Gross Earnings",earnings ? "₹1,00,000" : "₹84,600")}
+            ${statBlock("₹","Commission","₹15,000")}
+            ${statBlock("₹","Net Earnings","₹85,000")}
+            ${statBlock("★",earnings ? "Completed" : "Rating",earnings ? "124" : "4.9")}
+          </div>
+
+          ${earnings ? earningsContent() : dashboardContent()}
+
+        </section>
+      </div>
+    </section>
+  `;
+}
+
+function statBlock(icon,label,value){
+  return `
+    <div class="stat">
+      <div class="stat-icon">${icon}</div>
+      <div>
+        <span>${label}</span>
+        <strong>${value}</strong>
+      </div>
+    </div>
+  `;
+}
+
+function dashboardContent(){
+  return `
+    <div class="dashboard-grid">
+
+      <div class="box">
+        <div class="box-head">
+          <div>
+            <h2>New Booking Requests</h2>
+            <p>Requests waiting for your response</p>
+          </div>
+          <span class="count">3</span>
+        </div>
+
+        ${requestBlock("Mahesh Kulkarni","25 Aug 2026","09:00 AM","Temple Area Guidance")}
+        ${requestBlock("Priya Shah","27 Aug 2026","02:00 PM","Local Sightseeing")}
+      </div>
+
+      <div class="box">
+        <div class="box-head">
+          <div>
+            <h2>Availability</h2>
+            <p>Your current availability</p>
+          </div>
+          <button class="small-btn">Edit</button>
+        </div>
+
+        <div class="days">
+          ${["M","T","W","T","F","S","S"].map(x => `
+            <div class="day active">
+              <span>${x}</span>
+              <small>Available</small>
+            </div>
+          `).join("")}
+        </div>
+
+        <div class="time-available">◷ 07:00 AM — 09:00 PM</div>
+      </div>
+
+    </div>
+
+    <div class="box" style="margin-top:18px">
+
+      <div class="box-head">
+        <div>
+          <h2>Upcoming Bookings</h2>
+          <p>Your confirmed bookings</p>
+        </div>
+      </div>
+
+      <div class="table">
+        <div class="table-head">
+          <span>Customer</span>
+          <span>Date</span>
+          <span>Service</span>
+          <span>Amount</span>
+          <span>Status</span>
+        </div>
+
+        <div class="table-row">
+          <b>Vijay Patil</b>
+          <span>26 Aug 2026</span>
+          <span>Temple Guidance</span>
+          <b>₹1,200</b>
+          <span class="status confirmed">Confirmed</span>
+        </div>
+
+        <div class="table-row">
+          <b>Neha Joshi</b>
+          <span>28 Aug 2026</span>
+          <span>Shopping Assistance</span>
+          <b>₹900</b>
+          <span class="status confirmed">Confirmed</span>
+        </div>
+      </div>
+
+    </div>
+  `;
+}
+
+function requestBlock(name,date,time,service){
+  return `
+    <div class="request">
+      <div class="request-avatar">${name.charAt(0)}</div>
+      <div class="request-info">
+        <b>${name}</b>
+        <span>${date} • ${time}</span>
+        <small>${service}</small>
+      </div>
+      <div class="request-actions">
+        <button class="reject" onclick="showToast('Booking rejected')">Reject</button>
+        <button class="accept" onclick="showToast('Booking accepted')">Accept</button>
+      </div>
+    </div>
+  `;
+}
+
+function earningsContent(){
+  return `
+    <div class="box">
+
+      <div class="box-head">
+        <div>
+          <h2>Recent Earnings</h2>
+          <p>Latest completed bookings</p>
+        </div>
+      </div>
+
+      <div class="table">
+        <div class="table-head">
+          <span>Booking</span>
+          <span>Date</span>
+          <span>Gross</span>
+          <span>Commission</span>
+          <span>Net</span>
+        </div>
+
+        <div class="table-row">
+          <b>BSLG482951</b>
+          <span>18 Aug 2026</span>
+          <span>₹1,200</span>
+          <span>₹180</span>
+          <b>₹1,020</b>
+        </div>
+
+        <div class="table-row">
+          <b>BSLG472820</b>
+          <span>16 Aug 2026</span>
+          <span>₹900</span>
+          <span>₹135</span>
+          <b>₹765</b>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="commission-note">
+      ✓
+      <div>
+        <b>BhaktSeva Commission</b>
+        <p>Commission is calculated according to the Admin-defined percentage or fixed amount.</p>
+      </div>
+    </div>
+  `;
+}
+
+
+/* ===== CUSTOMER ACCOUNT ===== */
+function getCustomers(){
+  return JSON.parse(localStorage.getItem("bhaktsevaCustomers") || "[]");
+}
+function saveCustomers(list){
+  localStorage.setItem("bhaktsevaCustomers", JSON.stringify(list));
+}
+function currentCustomer(){
+  return JSON.parse(localStorage.getItem("bhaktsevaCurrentCustomer") || "null");
+}
+function setCustomer(customer){
+  if(customer) localStorage.setItem("bhaktsevaCurrentCustomer", JSON.stringify(customer));
+  else localStorage.removeItem("bhaktsevaCurrentCustomer");
+}
+function allCustomerBookings(){
+  return JSON.parse(localStorage.getItem("bhaktsevaCustomerBookings") || "[]");
+}
+function customerBookingsFor(id){
+  return allCustomerBookings().filter(b => b.customerId === id);
+}
+function escapeCustomer(v){
+  return String(v ?? "").replace(/[&<>"']/g, s => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+  }[s]));
+}
+function customerAuthPage(){
+  return `
+    <section class="customer-auth">
+      <div class="customer-auth-visual">
+        <div>
+          <div class="eyebrow" style="color:#ffd0b5">BHAKTSEVA ACCOUNT</div>
+          <h1>Manage Your Journey From One Place</h1>
+          <p>Login to check your guide bookings, booking status and personal details. New customer? Create your account in a few seconds.</p>
+        </div>
+      </div>
+      <div class="customer-auth-box">
+        <div class="logo">
+          <span class="om">ॐ</span>
+          <span class="logo-text">Bhakt<span>Seva</span></span>
+        </div>
+
+        <div class="auth-switch">
+          <button id="customerLoginTab" class="active">Login</button>
+          <button id="customerRegisterTab">Registration</button>
+        </div>
+
+        <div id="customerAuthForm"></div>
+      </div>
+    </section>
+  `;
+}
+function initCustomerAuth(){
+  const loginTab=document.getElementById("customerLoginTab");
+  const registerTab=document.getElementById("customerRegisterTab");
+  const form=document.getElementById("customerAuthForm");
+
+  function loginForm(){
+    loginTab.classList.add("active");
+    registerTab.classList.remove("active");
+    form.innerHTML=`
+      <div class="eyebrow">CUSTOMER LOGIN</div>
+      <h2>Welcome Back</h2>
+      <p>Login to view your profile and bookings.</p>
+
+      <label>Mobile Number</label>
+      <input id="customerMobile" type="tel" placeholder="+91 98765 43210">
+
+      <label>Password</label>
+      <input id="customerPassword" type="password" placeholder="Enter password">
+
+      <button class="primary-btn full" id="customerLoginBtn" style="margin-top:20px">Login →</button>
+
+      <div class="divider">OR</div>
+      <p style="text-align:center">New customer? Select Registration above.</p>
+    `;
+
+    document.getElementById("customerLoginBtn").onclick=()=>{
+      const mobile=document.getElementById("customerMobile").value.trim();
+      const password=document.getElementById("customerPassword").value;
+      const customer=getCustomers().find(c=>c.mobile===mobile && c.password===password);
+
+      if(!customer){
+        showToast("Invalid mobile number or password");
+        return;
+      }
+
+      setCustomer(customer);
+      showToast("Login successful");
+      setTimeout(()=>location.hash="#profile",500);
+    };
+  }
+
+  function registerForm(){
+    registerTab.classList.add("active");
+    loginTab.classList.remove("active");
+    form.innerHTML=`
+      <div class="eyebrow">CREATE ACCOUNT</div>
+      <h2>Create Account</h2>
+      <p>Register as a BhaktSeva customer.</p>
+
+      <label>Full Name</label>
+      <input id="registerName" placeholder="Enter full name">
+
+      <label>Mobile Number</label>
+      <input id="registerMobile" type="tel" placeholder="+91 98765 43210">
+
+      <label>Email Address</label>
+      <input id="registerEmail" type="email" placeholder="you@example.com">
+
+      <label>Password</label>
+      <input id="registerPassword" type="password" placeholder="Create password">
+
+      <label>Confirm Password</label>
+      <input id="registerConfirm" type="password" placeholder="Confirm password">
+
+      <button class="primary-btn full" id="customerRegisterBtn" style="margin-top:20px">Create Account →</button>
+    `;
+
+    document.getElementById("customerRegisterBtn").onclick=()=>{
+      const name=document.getElementById("registerName").value.trim();
+      const mobile=document.getElementById("registerMobile").value.trim();
+      const email=document.getElementById("registerEmail").value.trim();
+      const password=document.getElementById("registerPassword").value;
+      const confirm=document.getElementById("registerConfirm").value;
+
+      if(!name || !mobile || !email || !password){
+        showToast("Please fill all fields");
+        return;
+      }
+      if(password!==confirm){
+        showToast("Passwords do not match");
+        return;
+      }
+
+      const customers=getCustomers();
+      if(customers.some(c=>c.mobile===mobile)){
+        showToast("Mobile number already registered");
+        return;
+      }
+
+      const customer={
+        id:"CUS"+Date.now(),
+        name,mobile,email,password,
+        city:"",
+        createdAt:new Date().toISOString()
+      };
+
+      customers.push(customer);
+      saveCustomers(customers);
+      setCustomer(customer);
+      showToast("Registration successful");
+      setTimeout(()=>location.hash="#profile",500);
+    };
+  }
+
+  loginTab.onclick=loginForm;
+  registerTab.onclick=registerForm;
+  loginForm();
+}
+function customerProfilePage(){
+  const c=currentCustomer();
+  if(!c){
+    location.hash="#customer-login";
+    return "";
+  }
+
+  const bookings=customerBookingsFor(c.id);
+  const upcoming=bookings.filter(b=>b.status==="Guide Pending" || b.status==="Confirmed").length;
+  const completed=bookings.filter(b=>b.status==="Completed").length;
+  const cancelled=bookings.filter(b=>b.status==="Cancelled").length;
+  const spent=bookings.reduce((sum,b)=>sum+Number(b.total||0),0);
+
+  return `
+    <section class="account-page">
+      <div class="container account-layout">
+        <aside class="account-sidebar">
+          <div class="account-avatar">${escapeCustomer(c.name.charAt(0).toUpperCase())}</div>
+          <div class="account-sidebar-name">${escapeCustomer(c.name)}</div>
+          <div class="account-sidebar-email">${escapeCustomer(c.email)}</div>
+
+          <nav class="account-nav">
+            <a class="active" href="#profile">👤 My Profile</a>
+            <a href="#bookings">▤ My Bookings</a>
+            <a href="#guides">＋ Book a Guide</a>
+            <a href="#customer-login" id="customerLogout" class="account-logout">↪ Logout</a>
+          </nav>
+        </aside>
+
+        <main class="account-main">
+          <div class="account-head">
+            <div>
+              <div class="eyebrow">MY ACCOUNT</div>
+              <h1>My Profile</h1>
+              <p>Manage your account and see your Local Guide booking activity.</p>
+            </div>
+            <a class="outline-btn" href="#bookings">My Bookings (${bookings.length})</a>
+          </div>
+
+          <div class="account-card">
+            <h2>Personal Details</h2>
+            <div class="account-form-grid">
+              <div class="account-field">
+                <label>Full Name</label>
+                <input id="profileName" value="${escapeCustomer(c.name)}">
+              </div>
+              <div class="account-field">
+                <label>Mobile Number</label>
+                <input value="${escapeCustomer(c.mobile)}" disabled>
+              </div>
+              <div class="account-field">
+                <label>Email Address</label>
+                <input id="profileEmail" type="email" value="${escapeCustomer(c.email)}">
+              </div>
+              <div class="account-field">
+                <label>City</label>
+                <input id="profileCity" value="${escapeCustomer(c.city)}" placeholder="Pune">
+              </div>
+            </div>
+            <div class="account-actions">
+              <button class="primary-btn" id="saveCustomerProfile">Save Changes</button>
+            </div>
+          </div>
+
+          <div class="account-card">
+            <h2>Booking Overview</h2>
+            <div class="account-stats">
+              <div class="account-stat"><span>Upcoming</span><strong>${upcoming}</strong></div>
+              <div class="account-stat"><span>Completed</span><strong>${completed}</strong></div>
+              <div class="account-stat"><span>Cancelled</span><strong>${cancelled}</strong></div>
+              <div class="account-stat"><span>Total Spent</span><strong>₹${spent}</strong></div>
+            </div>
+          </div>
+
+          <div class="account-card">
+            <div class="account-head" style="margin-bottom:0">
+              <div>
+                <h2 style="margin-bottom:4px">Recent Bookings</h2>
+                <p style="font-size:11px;color:#888">Your latest Local Guide booking activity.</p>
+              </div>
+              <a class="text-link" href="#bookings">View All →</a>
+            </div>
+            <div style="margin-top:18px">
+              ${bookings.length ? bookings.slice(-3).reverse().map(customerBookingCard).join("") :
+                `<div class="account-empty"><h3>No bookings yet</h3><p>Find a local guide and make your first booking.</p><a class="primary-btn" href="#guides">Find a Guide</a></div>`}
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+  `;
+}
+function bookingStatusClass(status){
+  if(status==="Confirmed") return "confirmed";
+  if(status==="Completed") return "completed";
+  if(status==="Cancelled") return "cancelled";
+  return "pending";
+}
+function customerBookingCard(b){
+  const g=guides.find(x=>x.id===Number(b.guideId)) || guides[0];
+  return `
+    <div class="account-booking">
+      <div class="account-booking-top">
+        <div class="account-booking-guide">
+          <img src="${g.image}" alt="${escapeCustomer(g.name)}">
+          <div>
+            <b>${escapeCustomer(g.name)}</b>
+            <span>Booking ID: ${escapeCustomer(b.id)}</span>
+            <span>${escapeCustomer(b.service || "Local Guide Service")}</span>
+          </div>
+        </div>
+        <span class="account-status ${bookingStatusClass(b.status)}">${escapeCustomer(b.status || "Guide Pending")}</span>
+      </div>
+
+      <div class="account-booking-info">
+        ${infoBlock("Date",b.date || "-")}
+        ${infoBlock("Time",b.time || "-")}
+        ${infoBlock("Duration",(b.duration || "-")+" Hours")}
+        ${infoBlock("People",b.persons || "-")}
+        ${infoBlock("Amount","₹"+(b.total || 0))}
+      </div>
+
+      <div class="account-booking-actions">
+        <button class="outline-btn" onclick="openCustomerBooking('${escapeCustomer(b.id)}')">View Details</button>
+        ${b.status==="Guide Pending" ? `<button class="outline-btn" onclick="cancelCustomerBooking('${escapeCustomer(b.id)}')">Cancel</button>` : ""}
+      </div>
+    </div>
+  `;
+}
+function myBookingsPage(){
+  const c=currentCustomer();
+  if(!c){
+    location.hash="#customer-login";
+    return "";
+  }
+
+  const bookings=customerBookingsFor(c.id);
+
+  return `
+    <section class="page-hero small">
+      <div class="container">
+        <div class="eyebrow">MY ACCOUNT</div>
+        <h1>My Bookings</h1>
+        <p>Check whether your guide booking is pending, confirmed, completed or cancelled.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="account-tabs">
+          <button class="active" data-account-filter="all">All</button>
+          <button data-account-filter="upcoming">Upcoming</button>
+          <button data-account-filter="completed">Completed</button>
+          <button data-account-filter="cancelled">Cancelled</button>
+        </div>
+
+        <div id="customerBookingsList">
+          ${bookings.length ? bookings.slice().reverse().map(customerBookingCard).join("") :
+            `<div class="account-empty"><h3>No bookings yet</h3><p>Book a verified Local Guide for your journey.</p><a class="primary-btn" href="#guides">Find a Guide</a></div>`}
+        </div>
+      </div>
+    </section>
+
+    <div class="booking-detail-modal" id="customerBookingModal">
+      <div class="booking-detail-box" id="customerBookingModalContent"></div>
+    </div>
+  `;
+}
+function initCustomerBookings(){
+  const c=currentCustomer();
+  if(!c) return;
+
+  const buttons=document.querySelectorAll("[data-account-filter]");
+  const list=document.getElementById("customerBookingsList");
+  const bookings=customerBookingsFor(c.id);
+
+  buttons.forEach(btn=>{
+    btn.onclick=()=>{
+      buttons.forEach(x=>x.classList.remove("active"));
+      btn.classList.add("active");
+
+      const filter=btn.dataset.accountFilter;
+      let filtered=bookings;
+
+      if(filter==="upcoming") filtered=bookings.filter(b=>b.status==="Guide Pending" || b.status==="Confirmed");
+      if(filter==="completed") filtered=bookings.filter(b=>b.status==="Completed");
+      if(filter==="cancelled") filtered=bookings.filter(b=>b.status==="Cancelled");
+
+      list.innerHTML=filtered.length ? filtered.slice().reverse().map(customerBookingCard).join("") :
+        `<div class="account-empty"><h3>No ${filter} bookings</h3><p>There are no bookings in this section.</p></div>`;
+    };
+  });
+}
+function openCustomerBooking(id){
+  const c=currentCustomer();
+  const b=customerBookingsFor(c.id).find(x=>x.id===id);
+  if(!b) return;
+
+  const g=guides.find(x=>x.id===Number(b.guideId)) || guides[0];
+  const modal=document.getElementById("customerBookingModal");
+  const box=document.getElementById("customerBookingModalContent");
+  if(!modal || !box) return;
+
+  box.innerHTML=`
+    <button class="booking-detail-close" onclick="closeCustomerBooking()">×</button>
+    <div class="eyebrow">BOOKING DETAILS</div>
+    <h2 style="font:700 30px 'Playfair Display',serif;margin:7px 0 20px">${escapeCustomer(b.id)}</h2>
+
+    <div class="confirmation-guide">
+      <img src="${g.image}" alt="${escapeCustomer(g.name)}">
+      <div>
+        <b>${escapeCustomer(g.name)}</b>
+        <span>✓ Verified Guide</span>
+      </div>
+    </div>
+
+    <div class="confirmation-grid">
+      ${infoBlock("Status",b.status || "Guide Pending")}
+      ${infoBlock("Date",b.date || "-")}
+      ${infoBlock("Start Time",b.time || "-")}
+      ${infoBlock("Duration",(b.duration || "-")+" Hours")}
+      ${infoBlock("People",b.persons || "-")}
+      ${infoBlock("Language",b.language || "-")}
+      ${infoBlock("Service",b.service || "-")}
+      ${infoBlock("Guide Charge","₹"+(b.guideAmount || 0))}
+      ${infoBlock("Service Charge","₹"+(b.serviceCharge || 0))}
+    </div>
+
+    <div class="final-amount">
+      <span>Total Amount</span>
+      <strong>₹${b.total || 0}</strong>
+    </div>
+
+    <div class="box" style="margin-top:18px">
+      <h2>Special Requirements</h2>
+      <p>${escapeCustomer(b.requirements || "No special requirements added.")}</p>
+    </div>
+  `;
+
+  modal.classList.add("open");
+}
+function closeCustomerBooking(){
+  const modal=document.getElementById("customerBookingModal");
+  if(modal) modal.classList.remove("open");
+}
+function cancelCustomerBooking(id){
+  const c=currentCustomer();
+  if(!c) return;
+
+  const all=allCustomerBookings();
+  const b=all.find(x=>x.id===id && x.customerId===c.id);
+  if(!b) return;
+
+  if(!confirm("Are you sure you want to cancel this booking?")) return;
+
+  b.status="Cancelled";
+  localStorage.setItem("bhaktsevaCustomerBookings",JSON.stringify(all));
+  localStorage.setItem("bhaktsevaBooking",JSON.stringify(b));
+  showToast("Booking cancelled");
+  route();
+}
+function initCustomerProfile(){
+  const c=currentCustomer();
+  if(!c) return;
+
+  const save=document.getElementById("saveCustomerProfile");
+  if(save){
+    save.onclick=()=>{
+      const customers=getCustomers();
+      const i=customers.findIndex(x=>x.id===c.id);
+      if(i<0) return;
+
+      customers[i].name=document.getElementById("profileName").value.trim();
+      customers[i].email=document.getElementById("profileEmail").value.trim();
+      customers[i].city=document.getElementById("profileCity").value.trim();
+
+      saveCustomers(customers);
+      setCustomer(customers[i]);
+      showToast("Profile updated");
+      route();
+    };
+  }
+
+  const logout=document.getElementById("customerLogout");
+  if(logout){
+    logout.onclick=(e)=>{
+      e.preventDefault();
+      setCustomer(null);
+      showToast("Logged out");
+      setTimeout(()=>location.hash="#customer-login",300);
+    };
+  }
+}
+
+
+/* ---------- ROUTING ---------- */
+
+function route(){
+  let hash=location.hash.replace("#","") || "home";
+  const parts=hash.split("/");
+  const page=parts[0];
+
+  if(page==="home"){
+    app.innerHTML=homePage();
+  }else if(page==="guides"){
+    app.innerHTML=guidesPage();
+    initGuides();
+  }else if(page==="guide"){
+    app.innerHTML=guideProfile(parts[1]);
+  }else if(page==="book"){
+    app.innerHTML=bookingPage(parts[1]);
+    initBooking(parts[1]);
+  }else if(page==="confirmation"){
+    app.innerHTML=confirmationPage();
+  }else if(page==="customer-login"){
+    app.innerHTML=customerAuthPage();
+    initCustomerAuth();
+  }else if(page==="profile"){
+    app.innerHTML=customerProfilePage();
+    initCustomerProfile();
+  }else if(page==="bookings"){
+    app.innerHTML=myBookingsPage();
+    if(currentCustomer()) initCustomerBookings();
+  }else if(page==="guide-login"){
+    app.innerHTML=guideLoginPage();
+
+    document.getElementById("guideLoginBtn").onclick=()=>{
+      const mobile=document.getElementById("guideMobile").value.trim();
+
+      if(!mobile){
+        showToast("Please enter mobile number");
+        return;
+      }
+
+      showToast("OTP demo: Login successful");
+      setTimeout(()=>location.hash="#dashboard",700);
+    };
+  }else if(page==="dashboard"){
+    app.innerHTML=dashboardPage(false);
+  }else if(page==="earnings"){
+    app.innerHTML=dashboardPage(true);
+  }else{
+    app.innerHTML=homePage();
+  }
+
+  window.scrollTo(0,0);
+
+  document.querySelectorAll(".nav-links a").forEach(a=>{
+    a.addEventListener("click",()=>{
+      const nav=document.getElementById("navLinks");
+      if(nav) nav.classList.remove("open");
+    });
+  });
+}
+
+document.getElementById("menuBtn").addEventListener("click",() => {
+  document.getElementById("navLinks").classList.toggle("open");
+});
+
+window.addEventListener("hashchange",route);
+window.addEventListener("DOMContentLoaded",route);
+</script>
+
+</body>
+</html>
