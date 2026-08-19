@@ -793,7 +793,7 @@ textarea{
 .hero{
   background:
     linear-gradient(90deg, rgba(38,25,16,.82) 0%, rgba(38,25,16,.58) 48%, rgba(38,25,16,.30) 100%),
-    url("https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1800&q=85")
+    url("https://bhaktseva.in/wp-content/uploads/2026/08/images-unsplash-com-photo-1548013146-72479768bada.jpg")
     center/cover no-repeat !important;
 }
 .hero::before{
@@ -965,6 +965,196 @@ textarea{
   .hero-search {
     border-radius: 13px !important;
   }
+}
+
+</style>
+
+<style>
+
+/* =====================================================
+   PREMIUM UI UPDATE — HERO BACKGROUND, SEARCH BAR & GUIDE CARDS
+   ===================================================== */
+
+/* HERO */
+.lg-hero{
+  position:relative !important;
+  min-height:620px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:95px 5% 85px !important;
+  overflow:hidden;
+  isolation:isolate;
+  background:
+    linear-gradient(90deg,rgba(30,18,9,.82) 0%,rgba(30,18,9,.58) 48%,rgba(30,18,9,.28) 100%),
+    url("https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=2200&q=90") center/cover no-repeat !important;
+}
+.lg-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:radial-gradient(circle at 75% 35%,rgba(255,177,72,.22),transparent 28%),linear-gradient(0deg,rgba(0,0,0,.24),transparent 45%);
+}
+.lg-hero .lg-eyebrow{
+  color:#ffd29a;
+  text-shadow:0 2px 10px rgba(0,0,0,.35);
+}
+.lg-hero h1{
+  max-width:860px;
+  color:#fff !important;
+  font-size:clamp(40px,5vw,68px) !important;
+  line-height:1.08;
+  text-shadow:0 5px 30px rgba(0,0,0,.38);
+}
+.lg-hero p{
+  max-width:700px;
+  color:rgba(255,255,255,.94) !important;
+  text-shadow:0 2px 12px rgba(0,0,0,.35);
+}
+
+/* SEARCH BAR */
+.lg-search{
+  width:min(1120px,100%) !important;
+  margin:38px auto 0 !important;
+  padding:10px !important;
+  gap:0 !important;
+  grid-template-columns:1.55fr 1fr 1fr auto !important;
+  background:rgba(255,255,255,.96) !important;
+  border:1px solid rgba(255,255,255,.72);
+  border-radius:20px !important;
+  box-shadow:0 24px 65px rgba(0,0,0,.32) !important;
+  backdrop-filter:blur(14px);
+  overflow:hidden;
+}
+.lg-search > div{
+  padding:6px 14px;
+  border-right:1px solid #eee3d9;
+}
+.lg-search label{
+  color:#6f5140;
+  margin-bottom:5px;
+  font-size:11px;
+  letter-spacing:.2px;
+}
+.lg-search input,
+.lg-search select{
+  border:0 !important;
+  box-shadow:none !important;
+  padding:8px 0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  font-weight:600;
+}
+.lg-search input:focus,
+.lg-search select:focus{
+  box-shadow:none !important;
+}
+.lg-search .lg-btn{
+  min-width:145px;
+  margin:0;
+  padding:16px 24px;
+  border-radius:13px;
+  background:linear-gradient(135deg,#f28b22,#d85d12) !important;
+  box-shadow:0 9px 24px rgba(216,93,18,.28);
+}
+.lg-search .lg-btn:hover{
+  transform:translateY(-2px);
+  filter:brightness(1.04);
+}
+
+/* FEATURED GUIDE CARDS */
+.lg-guide-grid{
+  gap:24px !important;
+}
+.lg-guide-card{
+  position:relative;
+  border:1px solid rgba(234,223,211,.9) !important;
+  border-radius:20px !important;
+  overflow:hidden;
+  background:linear-gradient(180deg,#fff,#fffdf9);
+  box-shadow:0 12px 32px rgba(50,25,10,.10) !important;
+  transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
+}
+.lg-guide-card:hover{
+  transform:translateY(-9px);
+  border-color:rgba(232,111,24,.35) !important;
+  box-shadow:0 24px 50px rgba(50,25,10,.17) !important;
+}
+.lg-guide-photo{
+  height:255px !important;
+  display:block;
+  transition:transform .45s ease;
+}
+.lg-guide-card:hover .lg-guide-photo{
+  transform:scale(1.045);
+}
+.lg-guide-card::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;top:205px;
+  height:55px;
+  pointer-events:none;
+  background:linear-gradient(transparent,rgba(0,0,0,.16));
+}
+.lg-guide-body{
+  position:relative;
+  z-index:1;
+  padding:20px !important;
+}
+.lg-guide-body h3{
+  font-size:20px;
+  margin-bottom:7px !important;
+}
+.lg-rating{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  padding:6px 9px;
+  margin:8px 0 !important;
+  border-radius:8px;
+  background:#fff8df;
+  color:#b87900 !important;
+}
+.lg-verified{
+  margin:7px 0 9px !important;
+  border:1px solid #d4eddb;
+}
+.lg-services-mini{
+  min-height:31px;
+}
+.lg-chip{
+  padding:6px 9px !important;
+  border:1px solid #f3dfc7;
+  background:#fff7ed !important;
+}
+.lg-card-footer{
+  padding-top:15px;
+  margin-top:16px !important;
+  border-top:1px solid #f0e6dc;
+}
+.lg-card-footer strong{
+  font-size:17px;
+}
+.lg-card-footer .lg-btn{
+  border-radius:10px;
+  padding:11px 15px;
+}
+
+@media(max-width:950px){
+  .lg-hero{min-height:580px;padding:80px 5% 70px !important}
+  .lg-search{grid-template-columns:1fr 1fr !important;gap:8px !important;padding:10px !important}
+  .lg-search > div{border-right:0;border-bottom:1px solid #eee3d9;padding:9px 10px}
+  .lg-search .lg-btn{grid-column:1/-1;width:100%}
+}
+@media(max-width:650px){
+  .lg-hero{min-height:auto;padding:80px 20px 60px !important;background-position:58% center !important}
+  .lg-hero h1{font-size:39px !important}
+  .lg-search{grid-template-columns:1fr !important;border-radius:16px !important}
+  .lg-search > div{padding:9px 8px}
+  .lg-guide-photo{height:245px !important}
+  .lg-guide-card::after{top:195px}
 }
 
 </style>
